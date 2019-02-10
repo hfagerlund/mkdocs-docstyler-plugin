@@ -1,0 +1,17 @@
+{%- if persistent_styles -%}
+    {% for href, media_types in persistent_styles %}
+        <link href="{{ href }}" rel="stylesheet"{% if media_types %} media="{{ media_types }}"{% endif %}>
+    {%- endfor %}
+{%- endif -%}
+  
+{%- if preferred_styles -%}
+  {% for href, title, media_types in preferred_styles %}
+      <link href="{{ href }}" title="{{ title }}" rel="stylesheet"{% if media_types %} media="{{ media_types }}"{% endif %}>
+  {%- endfor %} 
+{%- endif -%}
+
+{%- if alternative_styles -%}
+  {% for href, title, media_types in alternative_styles %}
+          <link href="{{ href }}" title="{{ title }}" rel="alternate stylesheet"{% if media_types %} media="{{ media_types }}"{% endif %}>
+  {%- endfor %}
+{%- endif -%}
